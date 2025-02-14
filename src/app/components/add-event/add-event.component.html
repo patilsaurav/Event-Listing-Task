@@ -1,0 +1,99 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-5">
+      <!-- Card -->
+      <div class="card shadow-lg border-0">
+        <!-- Card Header with Gradient -->
+        <div
+          class="card-header text-center text-white"
+          style="background: linear-gradient(45deg, #4e73df, #1cc88a); border-top-left-radius: 10px; border-top-right-radius: 10px;"
+        >
+          <h4 class="mb-0">
+            <i class="bi bi-calendar2-event-fill"></i> Add Event
+          </h4>
+        </div>
+
+        <!-- Card Body -->
+        <div class="card-body p-3">
+          <form #eventForm="ngForm" (ngSubmit)="addEvent()">
+            <!-- Title Field -->
+            <div class="form-group mb-3">
+              <label for="title" class="form-label">
+                <i class="bi bi-pencil-square me-2"></i> Title
+              </label>
+              <input
+                type="text"
+                id="title"
+                class="form-control rounded-pill"
+                [(ngModel)]="event.title"
+                name="title"
+                required
+                #title="ngModel"
+              />
+              <div class="text-danger mt-1" *ngIf="title.invalid && title.touched">
+                <i class="bi bi-exclamation-circle"></i> Title is required.
+              </div>
+            </div>
+
+            <!-- Date Field -->
+            <div class="form-group mb-3">
+              <label for="date" class="form-label">
+                <i class="bi bi-calendar-event me-2"></i> Date
+              </label>
+              <input
+                type="date"
+                id="date"
+                class="form-control rounded-pill"
+                [(ngModel)]="event.date"
+                name="date"
+                required
+                #date="ngModel"
+              />
+              <div class="text-danger mt-1" *ngIf="date.invalid && date.touched">
+                <i class="bi bi-exclamation-circle"></i> Date is required.
+              </div>
+            </div>
+
+            <!-- Location Field -->
+            <div class="form-group mb-3">
+              <label for="location" class="form-label">
+                <i class="bi bi-geo-alt-fill me-2"></i> Location
+              </label>
+              <input
+                type="text"
+                id="location"
+                class="form-control rounded-pill"
+                [(ngModel)]="event.location"
+                name="location"
+                required
+                #location="ngModel"
+              />
+              <div class="text-danger mt-1" *ngIf="location.invalid && location.touched">
+                <i class="bi bi-exclamation-circle"></i> Location is required.
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button
+              type="submit"
+              class="btn btn-success w-100 rounded-pill py-2"
+              [disabled]="eventForm.invalid"
+            >
+              <i class="bi bi-check-circle me-2"></i> Submit
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Back Button Outside Card -->
+      <div class="text-center mt-4">
+        <button
+          class="btn btn-secondary rounded-pill px-4"
+          (click)="goBack()"
+        >
+          <i class="bi bi-arrow-left me-2"></i> Back
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

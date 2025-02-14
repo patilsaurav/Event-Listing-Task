@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+/* Make Table Responsive */
+.table {
+  table-layout: auto; /* Automatically adjusts column width */
+  width: 100%; /* Ensure table stretches to full width */
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  word-wrap: break-word; /* Prevent content from overflowing */
+  white-space: normal; /* Allow line breaks */
+  text-align: left; /* Align text to the left for better readability */
+  vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+  .table th,
+  .table td {
+    font-size: 0.9rem; /* Reduce font size for smaller screens */
+    padding: 8px; /* Add some spacing */
+  }
+
+  .table th {
+    background-color: #f8f9fa; /* Light background for header */
+  }
+
+  .table td button {
+    width: 100%; /* Buttons will stretch to full width on mobile */
+  }
+}
