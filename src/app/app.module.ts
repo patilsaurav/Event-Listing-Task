@@ -17,7 +17,7 @@ AddEventComponent
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule, // Add FormsModule here
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
